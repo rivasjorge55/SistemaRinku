@@ -34,4 +34,12 @@ create table movimientos
 	idrolpropio int not null foreign key references roles(id), --CAMPO informativo, en prevision de que los empleados puedan cambiar de rol en un futuro
 	idrolejecutado int not null foreign key references roles(id), --Este es el que se empleara para hacer el calculo de pago
 	entregas int not null default 0
-)
+);
+go
+
+--Crear Store Procedure que realizara el reporte
+create procedure store_nominaMensual @mes int
+as
+begin
+	select 'Este Store Implementara la Logica de negocia del pago de los trabajadores'
+end
