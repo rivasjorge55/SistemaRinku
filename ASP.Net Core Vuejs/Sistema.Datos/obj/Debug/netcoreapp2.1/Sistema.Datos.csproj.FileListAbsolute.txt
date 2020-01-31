@@ -1,0 +1,14 @@
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.deps.json
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.dll
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.csprojAssemblyReference.cache
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.csproj.CoreCompileInputs.cache
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.AssemblyInfoInputs.cache
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.AssemblyInfo.cs
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.runtimeconfig.json
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.runtimeconfig.dev.json
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Datos.pdb
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Entidades.dll
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Datos\bin\Debug\netcoreapp2.1\Sistema.Entidades.pdb
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.csproj.CopyComplete
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.dll
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Datos\obj\Debug\netcoreapp2.1\Sistema.Datos.pdb

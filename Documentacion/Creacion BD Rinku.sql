@@ -43,6 +43,15 @@ create table movimientos
 );
 go
 
+create function Fn_DameISR (@importe decimal(10,2))
+returns decimal(10,2)
+as
+begin
+	return iif(@importe <16000,@importe/100*9,@importe/100*12)
+end
+go
+-- select dbo.Fn_DameISR(20000)
+
 --Crear Store Procedure que realizara el reporte
 alter procedure store_nominaMensual @mes int
 as
@@ -84,13 +93,13 @@ begin
 	
 
 	update #nomina 
-	set Isalario  = salario*dias_trabajados*8,
-		Ibonos = bono*dias_trabajados*8,
-		Ientregas =entregas*5
+	set Isalario	= salario*dias_trabajados*8,
+		Ibonos		= bono*dias_trabajados*8,
+		Ientregas	= entregas*5
 
 	update #nomina 
 	set Ivales =IIF(porcentajevale =0,0,(Isalario+Ibonos+Ientregas)*porcentajevale)/100,
-		ISR = iif(Isalario+Ibonos+Ientregas <16000,(Isalario+Ibonos+Ientregas)/100*9,(Isalario+Ibonos+Ientregas)/100*12)
+		ISR = dbo.Fn_DameISR(Isalario+Ibonos+Ientregas)
 		
 	update #nomina 
 	set Neto = Isalario+Ibonos+Ientregas -ISR

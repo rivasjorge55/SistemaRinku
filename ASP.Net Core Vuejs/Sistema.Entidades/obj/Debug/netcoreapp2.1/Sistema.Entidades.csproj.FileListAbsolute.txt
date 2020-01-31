@@ -1,0 +1,9 @@
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Entidades\bin\Debug\netcoreapp2.1\Sistema.Entidades.deps.json
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Entidades\bin\Debug\netcoreapp2.1\Sistema.Entidades.dll
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Entidades\bin\Debug\netcoreapp2.1\Sistema.Entidades.pdb
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.csprojAssemblyReference.cache
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.csproj.CoreCompileInputs.cache
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.AssemblyInfoInputs.cache
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.AssemblyInfo.cs
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.dll
+E:\PROYECTOS\2019\SistemaRinku\SistemaRinku\ASP.Net Core Vuejs\Sistema.Entidades\obj\Debug\netcoreapp2.1\Sistema.Entidades.pdb
