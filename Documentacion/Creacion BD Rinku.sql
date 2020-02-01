@@ -116,28 +116,39 @@ begin
 end
 --Ejecucion de prueba
 -- exec store_nominaMensual 1
-insert into tipos values('interno',4,1)
-insert into tipos values('externo',0,1)
+--insert into tipos values('interno',4,1)
+--insert into tipos values('externo',0,1)
 
-insert into roles values('chofer',30,10,1)
-insert into roles values('cargador',30,5,1)
-insert into roles values('auxiliar',30,0,1)
+--insert into roles values('chofer',30,10,1)
+--insert into roles values('cargador',30,5,1)
+--insert into roles values('auxiliar',30,0,1)
 
-insert into trabajadores values('juan',1,1,1)
-insert into trabajadores values('jose',2,1,1)
-insert into trabajadores values('jesus',3,1,1)
+--insert into trabajadores values('juan',1,1,1)
+--insert into trabajadores values('jose',2,1,1)
+--insert into trabajadores values('jesus',3,1,1)
  
- set dateformat YMD
- insert into movimientos values(1,'2020/01/28',1,20)
- insert into movimientos values(2,'2020/01/28',2,20)
- insert into movimientos values(3,'2020/01/28',3,20)
- insert into movimientos values(3,'2020/01/28',1,20)
+-- set dateformat YMD
+-- insert into movimientos values(1,'2020/01/28',1,20)
+-- insert into movimientos values(2,'2020/01/28',2,20)
+-- insert into movimientos values(3,'2020/01/28',3,20)
+-- insert into movimientos values(3,'2020/01/28',1,20)
 
- select * from movimientos
-
+-- select * from movimientos
+ go
  
 create view vw_Trabajadores
 as 
 	select t.id, t.nombre, r.id as idrol, r.nombre as rol, tp.id as idtipo, tp.nombre as tipo, t.activo from trabajadores t inner join 
 			roles r on (t.idrol =r.id) inner join 
 			tipos tp on (t.idtipo = tp.id)
+go
+
+create view vw_movimientos
+as
+select m.id, t.id as idtrabajador, t.nombre, r.id as idrol, r.nombre as rol, tp.id as idtipo, tp.nombre as tipo, 
+		m.fecha, m.entregas
+	from 	movimientos m inner join 
+			trabajadores t on (m.idtrabajador=t.id) inner join 
+			roles r on (m.idrol = r.id) inner join 
+			tipos tp on (t.idtipo = tp.id)
+go

@@ -1,6 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Sistema.Datos.Mapping.Trabajadores;
+using Sistema.Datos.Movimientos;
+using Sistema.Entidades.Registros;
 using Sistema.Entidades.Trabajador;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,6 +15,9 @@ namespace Sistema.Datos
         public DbSet<Trabajador> Trabajadores { get; set; }
         public DbQuery<vw_trabajadores> vw_Trabajadores { get; set; }
 
+        public DbSet<Movimiento> Movimientos { get; set; }
+        public DbQuery<vw_movimientos> vw_movimientos { get; set; }
+
 
         public DbContextSistema(DbContextOptions<DbContextSistema> options):base(options)
         {
@@ -21,9 +27,12 @@ namespace Sistema.Datos
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfiguration(new TrabajadorMap());
 
+            modelBuilder.ApplyConfiguration(new TrabajadorMap());
             modelBuilder.Query<vw_trabajadores>().ToView("vw_trabajadores").Property(v => v.id).HasColumnName("id");
+
+            modelBuilder.ApplyConfiguration(new MovimientosMap());
+            modelBuilder.Query<vw_movimientos>().ToView("vw_movimientos").Property(v => v.id).HasColumnName("id");
         }
 
 
