@@ -10,6 +10,9 @@ namespace Sistema.Datos
     public class DbContextSistema : DbContext
     {
         public DbSet<Trabajador> Trabajadores { get; set; }
+        public DbQuery<vw_trabajadores> vw_Trabajadores { get; set; }
+
+
         public DbContextSistema(DbContextOptions<DbContextSistema> options):base(options)
         {
 
@@ -19,6 +22,10 @@ namespace Sistema.Datos
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new TrabajadorMap());
+
+            modelBuilder.Query<vw_trabajadores>().ToView("vw_trabajadores").Property(v => v.id).HasColumnName("id");
         }
+
+
     }
 }

@@ -15,6 +15,7 @@ namespace Sistema.Datos.Mapping.Trabajadores
                 .HasKey(t => t.id);
             builder.Property(c => c.nombre)
                  .HasMaxLength(100);
+            
         }
     }
 }

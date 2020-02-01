@@ -134,3 +134,10 @@ insert into trabajadores values('jesus',3,1,1)
  insert into movimientos values(3,'2020/01/28',1,20)
 
  select * from movimientos
+
+ 
+create view vw_Trabajadores
+as 
+	select t.id, t.nombre, r.id as idrol, r.nombre as rol, tp.id as idtipo, tp.nombre as tipo, t.activo from trabajadores t inner join 
+			roles r on (t.idrol =r.id) inner join 
+			tipos tp on (t.idtipo = tp.id)

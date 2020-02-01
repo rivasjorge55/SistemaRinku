@@ -11,4 +11,15 @@ namespace Sistema.Entidades.Trabajador
         public int idtipo { get; set; }
         public bool activo { get; set; }
     }
+
+    public class vw_trabajadores
+    {
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public int idrol { get; set; }
+        public string rol { get; set; }
+        public int idtipo { get; set; }
+        public string tipo { get; set; }
+        public bool activo { get; set; }
+    }
 }

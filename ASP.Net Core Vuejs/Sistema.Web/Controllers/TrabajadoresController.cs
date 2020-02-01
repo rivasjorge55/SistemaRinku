@@ -31,10 +31,18 @@ namespace Sistema.Web.Controllers
             {
                 id = t.id,
                 nombre = t.nombre,
-                idrol = t.id,
+                idrol = t.idrol,
                 idtipo = t.idtipo,
                 activo = t.activo
             });
+        }
+
+        // GET: api/Trabajadores/vwtrabajadores
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<vw_trabajadores>> vwtrabajadores()
+        {
+            var trabajador = await _context.vw_Trabajadores.ToListAsync();
+            return trabajador;
         }
 
         // GET: api/Trabajadores/Mostrar/3
@@ -97,7 +105,7 @@ namespace Sistema.Web.Controllers
         }
 
         // POST: api/Trabajadores/Crear
-        [HttpPost]
+        [HttpPost("[action]")]
         public async Task<IActionResult> Crear([FromBody] CrearViewModel model)
         {
             if (!ModelState.IsValid)
