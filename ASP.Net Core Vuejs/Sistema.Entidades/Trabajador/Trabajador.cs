@@ -22,4 +22,5 @@ namespace Sistema.Entidades.Trabajador
         public string tipo { get; set; }
         public bool activo { get; set; }
     }
+
 }

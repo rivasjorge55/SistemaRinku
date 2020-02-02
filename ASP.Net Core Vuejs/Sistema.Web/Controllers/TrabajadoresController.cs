@@ -37,6 +37,18 @@ namespace Sistema.Web.Controllers
             });
         }
 
+        // GET: api/Trabajadores/ListarS
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<TrabajadorSViewModel>> ListarS()
+        {
+            var trabajadorS = await _context.vw_Trabajadores.ToListAsync();
+            return trabajadorS.Select(t => new TrabajadorSViewModel
+            {
+                text = t.nombre + " - " + t.rol + " - " + t.tipo,
+                value = t.id
+            });
+        }
+
         // GET: api/Trabajadores/vwtrabajadores
         [HttpGet("[action]")]
         public async Task<IEnumerable<vw_trabajadores>> vwtrabajadores()

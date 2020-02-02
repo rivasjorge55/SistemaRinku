@@ -127,11 +127,11 @@ end
 --insert into trabajadores values('jose',2,1,1)
 --insert into trabajadores values('jesus',3,1,1)
  
--- set dateformat YMD
--- insert into movimientos values(1,'2020/01/28',1,20)
--- insert into movimientos values(2,'2020/01/28',2,20)
--- insert into movimientos values(3,'2020/01/28',3,20)
--- insert into movimientos values(3,'2020/01/28',1,20)
+-- set dateformat YMD delete from movimientos
+ --insert into movimientos values(1,'2020/01/28',1,20)
+ --insert into movimientos values(2,'2020/01/28',2,20)
+ --insert into movimientos values(3,'2020/01/28',3,20)
+ --insert into movimientos values(3,'2020/01/28',1,20)
 
 -- select * from movimientos
  go
@@ -139,6 +139,13 @@ end
 create view vw_Trabajadores
 as 
 	select t.id, t.nombre, r.id as idrol, r.nombre as rol, tp.id as idtipo, tp.nombre as tipo, t.activo from trabajadores t inner join 
+			roles r on (t.idrol =r.id) inner join 
+			tipos tp on (t.idtipo = tp.id)
+go
+
+alter view vw_TrabajadoresS
+as 
+	select t.nombre+' - '+r.nombre+' - '+tp.nombre as text , t.id as value from trabajadores t inner join 
 			roles r on (t.idrol =r.id) inner join 
 			tipos tp on (t.idtipo = tp.id)
 go
