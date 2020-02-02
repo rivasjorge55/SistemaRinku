@@ -104,7 +104,7 @@ begin
 	update #nomina 
 	set Neto = Isalario+Ibonos+Ientregas -ISR
 
-	select n.idtrabajador, n.nombre, 	sum( Isalario  ) as [$Salario],	sum( Ibonos  ) as [$bono],	sum( Ientregas  ) as [$Entregas],	sum( Ivales  ) as [$Vales],	sum( ISR  ) as [$ISR],	sum(neto) as [$Neto]
+	select n.idtrabajador, n.nombre, 	sum( Isalario  ) as [ISalario],	sum( Ibonos  ) as [Ibono],	sum( Ientregas  ) as [IEntregas],	sum( Ivales  ) as [IVales],	sum( ISR  ) as [ISR],	sum(neto) as [Neto]
 	from #nomina n
 	group by n.idtrabajador, n.nombre
 
@@ -133,7 +133,7 @@ end
  --insert into movimientos values(3,'2020/01/28',3,20)
  --insert into movimientos values(3,'2020/01/28',1,20)
 
--- select * from movimientos
+-- select * from movimientos delete from movimientos where id >12
  go
  
 create view vw_Trabajadores

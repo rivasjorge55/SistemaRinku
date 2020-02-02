@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Sistema.Datos.Mapping.Trabajadores;
 using Sistema.Datos.Movimientos;
+using Sistema.Datos.Mapping.Nominas;
 using Sistema.Entidades.Registros;
 using Sistema.Entidades.Trabajador;
+using Sistema.Entidades.Nominas;
 
 using System;
 using System.Collections.Generic;
@@ -17,6 +19,10 @@ namespace Sistema.Datos
 
         public DbSet<Movimiento> Movimientos { get; set; }
         public DbQuery<vw_movimientos> vw_movimientos { get; set; }
+
+        //public DbSet<Nomina> nominas { get; set; }
+        //public List<Nomina> nominas { get; set; }
+        //public DbSet<Nomina> Nominas { get; set; }
 
 
         public DbContextSistema(DbContextOptions<DbContextSistema> options):base(options)
@@ -33,7 +39,12 @@ namespace Sistema.Datos
 
             modelBuilder.ApplyConfiguration(new MovimientosMap());
             modelBuilder.Query<vw_movimientos>().ToView("vw_movimientos").Property(v => v.id).HasColumnName("id");
+
+            modelBuilder.Query<Nomina>();
+            //modelBuilder.ApplyConfiguration(new NominaMap());
         }
+
+        
 
 
     }

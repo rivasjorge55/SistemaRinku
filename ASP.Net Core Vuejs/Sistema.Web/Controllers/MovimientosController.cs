@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Sistema.Datos;
+using Sistema.Entidades.Nominas;
 using Sistema.Entidades.Registros;
 using Sistema.Web.Models.Movimientos;
+using Sistema.Web.Models.Nominas;
 
 namespace Sistema.Web.Controllers
 {
@@ -36,6 +39,50 @@ namespace Sistema.Web.Controllers
                 entregas=m.entregas 
             });
         }
+
+        // GET: api/Movimientos/Nomina/1
+        [HttpGet("[action]/{mes}")]
+        public async Task<IEnumerable<Nomina>> Nomina([FromRoute] int mes)
+        {
+            // Initialization.  
+            List<Nomina> lst = new List<Nomina>();
+
+            try
+            {
+                // Settings.  
+                SqlParameter usernameParam = new SqlParameter("@mes", mes );
+
+                // Processing.  
+                string sqlQuery = "EXEC [dbo].[store_nominaMensual] @mes";
+
+                lst = await _context.Query<Nomina>().FromSql(sqlQuery, usernameParam).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            // Info.  
+            return lst;
+        }
+
+        //// GET: api/Movimientos/Nominanomina
+        //[HttpGet("[action]/{id}")]
+        //public async Task<IEnumerable<Nomina>> Nomina([FromRoute] int id)
+        //{
+        //    SqlParameter mes = new SqlParameter("@mes", id);
+        //    var nomina = await _context.Nominas.FromSql<Nomina>("store_nominaMensual @mes", mes).ToListAsync();
+        //    return nomina;
+
+        //    // context.Database.SqlQuery<Nomina>(
+        //    //     "store_nominaMensual @mes",
+        //    //     new SqlParameter("param1", param1));
+
+        //    //var results = this.Database.SqlQuery<Nomina>("EXEC [dbo].[store_nominaMensual] {0}", param1);
+
+
+        //}
+
 
         // GET: api/Movimientos/vwmovimientos
         [HttpGet("[action]")]
@@ -137,7 +184,7 @@ namespace Sistema.Web.Controllers
         }
         ///
         // DELETE: api/Movimientos/Eliminar/3
-        [HttpDelete("[action]/{id}")]
+        [HttpPost("[action]/{id}")]
         public async Task<IActionResult> Eliminar([FromRoute] int id)
         {
             if (!ModelState.IsValid)
